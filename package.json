@@ -6,22 +6,32 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "@types/dat.gui": "^0.7.7",
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.27",
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
+    "@types/three": "^0.139.0",
+    "dat.gui": "^0.7.9",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.50.1",
+    "stats-js": "^1.0.1",
+    "three": "^0.139.2",
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start --scripts-version react-scripts",
+    "build": "react-app-rewired build --scripts-version react-scripts",
+    "test": "react-app-rewired test --scripts-version react-scripts",
+    "eject": "react-app-rewired eject --scripts-version react-scripts",
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+    "lint:fix": "tsc --noEmit && eslint --fix src/**/*.ts{,x}",
+    "format": "prettier --write src/**/*.ts{,x}"
   },
+  "homepage": "/audio-mesh",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -39,5 +49,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "raw-loader": "^4.0.2",
+    "react-app-rewired": "^2.2.1"
   }
 }
